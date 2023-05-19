@@ -1,15 +1,8 @@
-symptoms = {
-    "headache": False,
-    "nausea": False,
-    "dizziness": False,
-    "fever": False,
-}
+symptoms = {"headache": False, "nausea": False, "dizziness": False, "fever": False, }
 
-diseases = {
-    "migraine": {"headache": True, "nausea": True},
-    "flu": {"fever": True},
-    "ear infection": {"ear pain": True},
-}
+diseases = {"migraine": {"headache": True, "nausea": True}, "flu": {"fever": True},
+    "ear infection": {"ear pain": True}, }
+
 
 # Define the rules
 def rule_migraine(symptoms):
@@ -17,15 +10,18 @@ def rule_migraine(symptoms):
         return True
     return False
 
+
 def rule_flu(symptoms):
     if symptoms["fever"]:
         return True
     return False
 
+
 def rule_ear_infection(symptoms):
     if symptoms["ear pain"]:
         return True
     return False
+
 
 # Define the backward chaining algorithm
 def diagnose(symptom, diseases, symptoms):
@@ -39,7 +35,8 @@ def diagnose(symptom, diseases, symptoms):
     else:
         print("Unknown symptom.")
 
+
 # Test the diagnosis
 symptoms["headache"] = True
 symptoms["nausea"] = True
-diagnose("headache", diseases, symptoms)s
+diagnose("headache", diseases, symptoms)
