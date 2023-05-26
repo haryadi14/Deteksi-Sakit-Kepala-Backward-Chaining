@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="css/tailwind/tailwind.min.css">
     <link rel="icon" type="image/png" sizes="32x32" href="shuffle-for-tailwind.png">
     <script src="js/main.js"></script>
+    <script src="main.js" ></script>
+    <script src="main.js" ></script>
+
 </head>
 <body class="antialiased bg-body text-body font-body">
     <div class="">
@@ -18,6 +21,19 @@
             
             <h2 class="mt-2 mb-4 text-3xl leading-tight md:text-4xl md:leading-tight lg:text-5xl lg:leading-tight font-bold font-heading">Diagnosis Sakit Kepala</h2>
           </div>
+          <div id="modal" class="hidden fixed inset-0 flex items-center justify-center z-50">
+            <div class="modal-overlay absolute inset-0 bg-gray-500 opacity-75"></div>
+            <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+              <div class="modal-content py-4 text-left px-6">
+                <p id="result" class="text-lg font-bold"></p>
+                <div class="flex justify-end pt-4">
+                  <button class="modal-close px-4 py-2 bg-indigo-500 text-white rounded hover:bg-indigo-600">Tutup</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
           <div class="max-w-4xl mx-auto mb-12">
             
           </div>
@@ -31,7 +47,7 @@
                 </button>
                 <div class="mt-4 ">
                   <div class="relative">
-                    <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <select id="question1" class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                       <option disabled selected>Pilih Jawaban</option>
                       <option value="iya">Iya</option>
                       <option value="tidak">Tidak</option>
@@ -58,7 +74,7 @@
                 </button>
                 <div class="mt-4 ">
                   <div class="relative">
-                    <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <select id="question2" class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                       <option disabled selected>Pilih Jawaban</option>
                       <option value="iya">Iya</option>
                       <option value="tidak">Tidak</option>
@@ -85,7 +101,7 @@
                 </button>
                 <div class="mt-4 ">
                   <div class="relative">
-                    <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <select id="question3" class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                       <option disabled selected>Pilih Jawaban</option>
                       <option value="iya">Iya</option>
                       <option value="tidak">Tidak</option>
@@ -112,7 +128,7 @@
                 </button>
                 <div class="mt-4 ">
                   <div class="relative">
-                    <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <select id="question4" class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                       <option disabled selected>Pilih Jawaban</option>
                       <option value="iya">Iya</option>
                       <option value="tidak">Tidak</option>
@@ -139,7 +155,7 @@
                 </button>
                 <div class="mt-4 ">
                   <div class="relative">
-                    <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <select id="question5" class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                       <option disabled selected>Pilih Jawaban</option>
                       <option value="iya">Iya</option>
                       <option value="tidak">Tidak</option>
@@ -166,7 +182,7 @@
                 </button>
                 <div class="mt-4 ">
                   <div class="relative">
-                    <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <select id="question6" class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                       <option disabled selected>Pilih Jawaban</option>
                       <option value="iya">Iya</option>
                       <option value="tidak">Tidak</option>
@@ -193,7 +209,7 @@
                 </button>
                 <div class="mt-4 ">
                   <div class="relative">
-                    <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <select id="question7" class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                       <option disabled selected>Pilih Jawaban</option>
                       <option value="iya">Iya</option>
                       <option value="tidak">Tidak</option>
@@ -220,7 +236,7 @@
                 </button>
                 <div class="mt-4 ">
                   <div class="relative">
-                    <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <select id="question8" class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                       <option disabled selected>Pilih Jawaban</option>
                       <option value="iya">Iya</option>
                       <option value="tidak">Tidak</option>
@@ -247,7 +263,7 @@
                 </button>
                 <div class="mt-4 ">
                   <div class="relative">
-                    <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <select id="question9" class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                       <option disabled selected>Pilih Jawaban</option>
                       <option value="iya">Iya</option>
                       <option value="tidak">Tidak</option>
@@ -274,7 +290,7 @@
                 </button>
                 <div class="mt-4 ">
                   <div class="relative">
-                    <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <select id="question10" class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                       <option disabled selected>Pilih Jawaban</option>
                       <option value="iya">Iya</option>
                       <option value="tidak">Tidak</option>
@@ -301,7 +317,7 @@
                 </button>
                 <div class="mt-4 ">
                   <div class="relative">
-                    <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <select id="question11" class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                       <option disabled selected>Pilih Jawaban</option>
                       <option value="iya">Iya</option>
                       <option value="tidak">Tidak</option>
@@ -328,7 +344,7 @@
                 </button>
                 <div class="mt-4 ">
                   <div class="relative">
-                    <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <select id="question12" class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                       <option disabled selected>Pilih Jawaban</option>
                       <option value="iya">Iya</option>
                       <option value="tidak">Tidak</option>
@@ -355,7 +371,7 @@
                 </button>
                 <div class="mt-4 ">
                   <div class="relative">
-                    <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <select  id="question13"class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                       <option disabled selected>Pilih Jawaban</option>
                       <option value="iya">Iya</option>
                       <option value="tidak">Tidak</option>
@@ -382,7 +398,7 @@
                 </button>
                 <div class="mt-4 ">
                   <div class="relative">
-                    <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <select id="question14" class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                       <option disabled selected>Pilih Jawaban</option>
                       <option value="iya">Iya</option>
                       <option value="tidak">Tidak</option>
@@ -410,7 +426,7 @@
                 </button>
                 <div class="mt-4 ">
                   <div class="relative">
-                    <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    <select id="question15" class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                       <option disabled selected>Pilih Jawaban</option>
                       <option value="iya">Iya</option>
                       <option value="tidak">Tidak</option>
@@ -427,7 +443,8 @@
                   </div>
                 </div>
               </li>
-              <button type="submit" class="mt-4 px-4 py-2 bg-indigo-500 text-white rounded hover:bg-indigo-600">Submit</button>
+              <button id="submitBtn" type="submit" class="mt-4 px-4 py-2 bg-indigo-500 text-white rounded hover:bg-indigo-600">Submit</button>
+              <div id="result" class="mt-4"></div>
             </ul>
           </div>
         </div>
@@ -435,4 +452,3 @@
     </div>
 </body>
 </html>
-
